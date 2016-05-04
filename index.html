@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html lang="en" ng-app="app">
+        <head>
+            <meta charset="UTF-8">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+            <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+            <script src="/app.js" type="text/javascript" charset="utf-8"></script>
+                <title>SD Top Spots</title>
+                <h1>San Diego Top Spots</h1><hr color="#ddd"><br>    
+        </head>
+
+    <body ng-controller="myCtrl">
+        <div class="container" id="table">
+            <div class="panel-heading">
+                <div class="panel-body">
+                    <div class="row table-bordered" ng-repeat="a in spots">
+                        
+
+                        <div class="col-md-2">{{a.name}}</div>
+                        <div class="col-md-8">{{a.description}}</div>
+
+                        <div id="button">
+                            <a ng-href="https://www.google.com/maps?q={{a.location[0]}},{{a.location[1]}}" class="btn btn-info col-md-2" target="_blank">
+                                Go to Google Maps
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
